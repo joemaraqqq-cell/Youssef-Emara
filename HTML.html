@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مترجم محترف - ترجمة إنجليزية عربية</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tahoma', 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        /* الهيدر */
+        header {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #00d4ff;
+            margin-bottom: 20px;
+            background: #ddd;
+            display: inline-block;
+            object-fit: cover;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            opacity: 0.8;
+            margin: 5px 0;
+        }
+
+        /* الخدمات */
+        .services {
+            padding: 50px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .services h2 {
+            text-align: center;
+            color: #1a1a2e;
+            margin-bottom: 40px;
+            font-size: 28px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            color: #00d4ff;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .service-card ul {
+            list-style: none;
+        }
+
+        .service-card li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            color: #333;
+        }
+
+        .service-card li:last-child {
+            border-bottom: none;
+        }
+
+        .service-card li:before {
+            content: "✓ ";
+            color: #00d4ff;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+
+        .price {
+            font-size: 24px;
+            color: #00d4ff;
+            font-weight: bold;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid #f0f0f0;
+        }
+
+        /* المؤهلات */
+        .qualifications {
+            background: #f5f5f5;
+            padding: 50px 20px;
+        }
+
+        .qualifications h2 {
+            text-align: center;
+            color: #1a1a2e;
+            margin-bottom: 40px;
+            font-size: 28px;
+        }
+
+        .qual-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .qual-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .qual-item h4 {
+            color: #00d4ff;
+            margin-bottom: 10px;
+        }
+
+        .qual-item p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* العينات */
+        .portfolio {
+            background: white;
+            padding: 50px 20px;
+        }
+
+        .portfolio h2 {
+            text-align: center;
+            color: #1a1a2e;
+            margin-bottom: 40px;
+            font-size: 28px;
+        }
+
+        .samples {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .sample-card {
+            background: #f9f9f9;
+            padding: 25px;
+            border-radius: 10px;
+            border-right: 4px solid #00d4ff;
+            transition: transform 0.3s;
+        }
+
+        .sample-card:hover {
+            transform: translateY(-3px);
+            background: #f0f8ff;
+        }
+
+        .sample-card h4 {
+            color: #1a1a2e;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .sample-card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* التواصل */
+        .contact {
+            background: #1a1a2e;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+        }
+
+        .contact-info p {
+            margin: 15px 0;
+            font-size: 16px;
+        }
+
+        .contact a {
+            color: #00d4ff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #00d4ff;
+            color: #1a1a2e;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s;
+            border: 2px solid #00d4ff;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background: transparent;
+            color: #00d4ff;
+        }
+
+        /* الفوتر */
+        footer {
+            background: #0f0f1a;
+            color: #666;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 20px;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            .services, .portfolio, .contact, .qualifications {
+                padding: 30px 20px;
+            }
+
+            .services h2, .portfolio h2, .contact h2, .qualifications h2 {
+                font-size: 24px;
+            }
+
+            .service-card {
+                padding: 20px;
+            }
+
+            .profile-img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر -->
+    <header>
+        <div class="profile-img"></div>
+        <h1>Youssef Emara</h1>
+        <p>مترجم محترف | الإنجليزية ← العربية</p>
+        <p>Native Arabic Speaker | Professional Translator</p>
+    </header>
+
+    <!-- الخدمات -->
+    <section class="services">
+        <h2>الخدمات المقدمة</h2>
+        
+        <div class="service-card">
+            <h3>★ ترجمة احترافية</h3>
+            <ul>
+                <li>ترجمة دقيقة 100%</li>
+                <li>لغة عربية فصيحة وسلسة</li>
+                <li>تصحيح إملائي ونحوي</li>
+                <li>مراعاة السياق والأسلوب</li>
+                <li>تسليم في الموعد المحدد</li>
+            </ul>
+            <div class="price">5$ لكل 500 كلمة</div>
+        </div>
+
+        <div class="service-card">
+            <h3>★ ترجمة متخصصة + تدقيق</h3>
+            <ul>
+                <li>كل مزايا الخدمة الأساسية</li>
+                <li>تدقيق ومراجعة نهائية دقيقة</li>
+                <li>التزام بالمصطلحات المتخصصة</li>
+                <li>تعديل مجاني مرتين</li>
+                <li>ضمان الجودة العالية</li>
+            </ul>
+            <div class="price">10$ لكل 500 كلمة</div>
+        </div>
+    </section>
+
+    <!-- المؤهلات -->
+    <section class="qualifications">
+        <h2>المؤهلات والخبرات</h2>
+        <div class="qual-container">
+            <div class="qual-item">
+                <h4>سنوات الخبرة</h4>
+                <p>3 سنوات في مجال الترجمة الاحترافية</p>
+            </div>
+            <div class="qual-item">
+                <h4>اللغات</h4>
+                <p>إنجليزي أمريكي وبريطاني + عربي فصيح</p>
+            </div>
+            <div class="qual-item">
+                <h4>التخصصات</h4>
+                <p>تقنية، تسويق، محتوى، وثائق قانونية</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- العينات -->
+    <section class="portfolio">
+        <h2>عينات أعمالي</h2>
+        <div class="samples">
+            <div class="sample-card">
+                <h4>📱 مقالات تقنية</h4>
+                <p>ترجمة مقالات من TechCrunch و Medium</p>
+            </div>
+            <div class="sample-card">
+                <h4>🛍️ أوصاف منتجات</h4>
+                <p>ترجمة أوصاف منتجات e-commerce</p>
+            </div>
+            <div class="sample-card">
+                <h4>📄 سير ذاتية</h4>
+                <p>ترجمة CVs و Portfolio للسوق العالمي</p>
+            </div>
+            <div class="sample-card">
+                <h4>📚 محتوى تسويقي</h4>
+                <p>ترجمة الحملات والمقالات التسويقية</p>
+            </div>
+            <div class="sample-card">
+                <h4>⚖️ وثائق قانونية</h4>
+                <p>ترجمة العقود والوثائق الرسمية</p>
+            </div>
+            <div class="sample-card">
+                <h4>📖 محتوى عام</h4>
+                <p>ترجمة الكتب والمقالات والمدونات</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- التواصل -->
+    <section class="contact">
+        <h2>تواصل معي</h2>
+        <div class="contact-info">
+            <p>📧 البريد الإلكتروني: <a href="mailto:joemaraqqq@gmail.com">joemaraqqq@gmail.com</a></p>
+            <p>💬 واتساب: <a href="https://wa.me/201010788372">+201010788372</a></p>
+            <p>📞 الهاتف: <a href="tel:+201010788372">+201010788372</a></p>
+        </div>
+        <a href="mailto:joemaraqqq@gmail.com?subject=طلب خدمة ترجمة" class="btn">اطلب خدمتك الآن</a>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>© 2024 جميع الحقوق محفوظة</p>
+        <p>Youssef Emara - مترجم محترف</p>
+    </footer>
+
+</body>
+</html>
